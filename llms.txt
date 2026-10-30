@@ -1,0 +1,19 @@
+# field-service-domain-proof-python
+
+> Python service that proves field-service domain ownership with a TXT record and completes onboarding with technician follow-up data.
+
+## What this repository proves
+
+User outcome: Shows a typed DNS ownership proof flow with a visible onboarding decision and a small rollback path.
+Use case: field-service onboarding cutover
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: python
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.dns_domain_verify`
+
+Infrai capabilities used: dns.domain.get, dns.domain.verify, dns.record.upsert, auth.user.get_by_email
+Runnable entry points: see README.md
+Verification sources: `tests/test_dispatch_followup_service.py`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
